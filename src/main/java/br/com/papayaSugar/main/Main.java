@@ -26,7 +26,9 @@ public class Main {
 //        LembreteController.listar(entityManager);
 //        LembreteController.findById(entityManager);
 
-          LembreteController.findLike(entityManager);
+       //   LembreteController.findLike(entityManager);
+
+        LembreteController.update(entityManager);
 
     }
 

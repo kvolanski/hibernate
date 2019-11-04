@@ -46,7 +46,6 @@ public class LembreteController {
 
     }
 
-
     public static void findById(EntityManager entityManager){
 
         try{
@@ -88,6 +87,26 @@ public class LembreteController {
 
     }
 
+    public static void update(EntityManager entityManager){
+
+        try {
+
+            Lembrete lembrete = entityManager.find(Lembrete.class, 1L);
+
+            lembrete.setTitulo("teste de update2");
+            lembrete.setDescricao("Teste de update2");
+
+            entityManager.getTransaction().begin();
+            entityManager.merge(lembrete);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            entityManager.getTransaction().rollback();
+            System.out.println(e.getMessage());
+        }finally {
+            entityManager.close();
+        }
+
+    }
 
 }
 
