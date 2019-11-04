@@ -108,6 +108,24 @@ public class LembreteController {
 
     }
 
+    public static void remove(EntityManager entityManager){
+
+        try {
+
+            Lembrete lembrete = entityManager.find(Lembrete.class, 1L);
+            entityManager.getTransaction().begin();
+            entityManager.remove(lembrete);
+            entityManager.getTransaction().commit();
+
+        }catch (Exception e){
+            entityManager.getTransaction().rollback();
+            System.out.println(e.getMessage());
+        }finally {
+            entityManager.close();
+        }
+
+    }
+
 }
 
 
