@@ -19,11 +19,14 @@ public class Main {
 
 
         Lembrete lembrete = new Lembrete();
-        lembrete.setTitulo("Titulo");
-        lembrete.setDescricao("Descricao");
+        lembrete.setTitulo("Comprar feijão");
+        lembrete.setDescricao("Não esquecer");
 
-        LembreteController.salvar(entityManager, lembrete);
+      //    LembreteController.salvar(entityManager, lembrete);
+//        LembreteController.listar(entityManager);
+//        LembreteController.findById(entityManager);
 
+          LembreteController.findLike(entityManager);
 
     }
 
